@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Page → Markdown (Image Refs)",
+    "version": "0.2.0",
+    "description": "Convert the current page into Markdown with reference-style images collected at the bottom.",
+    "permissions": ["activeTab"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_title": "Convert page to Markdown",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  
